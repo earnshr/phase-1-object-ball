@@ -120,28 +120,25 @@ function homeTeamName() {
 	return gameObject()['home']['teamName']
 }
 
-function numPointsScored(playerName) {
-	let game = gameObject()
-	debugger
-	for (teamObj in game) {
-		debugger
-		let team = game[teamObj];
-		for (teamKey in team) {
-			debugger
-			let teamKeys = team[teamKey];
-			for (player in teamKeys) {
-				debugger
-				let namedPlayer = teamKeys[player];
-				// if (namedPlayer === playerName) {
-				// 	return playerName[points]
-				// } else { return "player not on roster" }
-			}
-
-		}
-
-
-
-
-	}
-
-}
+// function numPointsScored(playerName) {
+// 	let game = gameObject()
+// 	debugger
+// 	for (teamObj in game) {
+// 		debugger
+// 		let team = game[teamObj];
+// 		for (teamKey in team) {
+// 			debugger
+// 			let teamKeys = team[teamKey];
+// 			for (player in teamKeys) {
+// 				debugger
+// 				let namedPlayer = teamKeys[player];
+// 				for (players in namedPlayer) {
+// 				if (players === playerName) {
+// 					return players["points"]
+// 				} 
+// 				// else { return "player not on roster" }
+// 			}
+// 		}
+// 	}
+// }
+// }
