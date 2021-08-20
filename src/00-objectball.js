@@ -116,29 +116,45 @@ function gameObject() {
 	return ourObject
 }
 
-function homeTeamName() {
-	return gameObject()['home']['teamName']
+// function homeTeamName() {
+// 	return gameObject()['home']['teamName']
+// }
+//abstract out into variables different things to look into
+const game = gameObject()
+
+const allPlayers = Object.assign({}, game.home.players, game.away.players)
+
+function numPointsScored(playerName) {	
+	return allPlayers[playerName].points
+	// for(player in allPlayers) {
+	// 	if (player === playerName) {
+	// 		return allPlayers[player].points
+	// 	}
+	// }
+
 }
 
-// function numPointsScored(playerName) {
-// 	let game = gameObject()
-// 	debugger
-// 	for (teamObj in game) {
-// 		debugger
-// 		let team = game[teamObj];
-// 		for (teamKey in team) {
-// 			debugger
-// 			let teamKeys = team[teamKey];
-// 			for (player in teamKeys) {
-// 				debugger
-// 				let namedPlayer = teamKeys[player];
-// 				for (players in namedPlayer) {
-// 				if (players === playerName) {
-// 					return players["points"]
-// 				} 
-// 				// else { return "player not on roster" }
-// 			}
-// 		}
-// 	}
-// }
-// }
+function shoeSize(playerName) {
+	// first step is to combine the players into one object by going into the home and away objects and grabbing the players back out
+	// const game = gameObject();
+	//combine players using spread operator or Object.assign()
+	// const allPlayers = Object.assign({}, game.home.players, game.away.players)
+	return allPlayers[playerName].shoe
+}
+
+function teamColors(teamName) {
+	if (teamName === game.home.teamName) {
+		return game.home.colors;
+	} else if (teamName === game.away.teamName) {
+		return game.away.colors;
+	} else {
+		"this team isn't playing today"
+	}
+}
+
+function teamNames() {
+	let newArray = [];
+	newArray.push(game.home.teamName);
+	newArray.push(game.away.teamName);
+	return newArray;
+}
